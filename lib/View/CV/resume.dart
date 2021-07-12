@@ -120,7 +120,7 @@ class Resume extends StatelessWidget {
                   ),
                   experienceBuilder(info.experience!),
                   educationInfo(
-                      "Pusad Maharashtra", info.collegeName!, info.cgpa!),
+                      info.collegeAddr!, info.collegeName!, info.cgpa!),
                   SizedBox(height: 10),
                   Divider(
                     thickness: 2,
