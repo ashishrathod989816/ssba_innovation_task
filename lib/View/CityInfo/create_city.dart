@@ -16,8 +16,8 @@ class CreateCity extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     CityInfoController controller = Get.put(CityInfoController());
-
    final FocusScopeNode node = FocusScope.of(context);
+
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -42,9 +42,16 @@ class CreateCity extends StatelessWidget {
                 Text("City Name"),
                 TextFormField(
                   controller: city,
-                  onFieldSubmitted: (str) {
+                  // onFieldSubmitted: (str) {
+                  //   node.nextFocus();
+                  // },
+
+
+                onEditingComplete: (){
+
                     node.nextFocus();
-                  },
+
+                },
                   validator: (str) {
                     if (str == null) return "City should not be null";
                     if (str.length == 0) return "City should not be null";
@@ -57,10 +64,16 @@ class CreateCity extends StatelessWidget {
                 Text("State Name"),
                 TextFormField(
                   controller: state,
-                  onFieldSubmitted: (str){
+                  // onFieldSubmitted: (str){
+                  //   node.nextFocus();
+
+                  // },
+
+                      onEditingComplete: (){
+
                     node.nextFocus();
 
-                  },
+                },
                   validator: (str) {
                     if (str == null) return "State should not be null";
                     if (str.length == 0)
@@ -75,11 +88,16 @@ class CreateCity extends StatelessWidget {
                 Text("Country Name"),
                 TextFormField(
                   controller: country,
-                  onFieldSubmitted: (str){
+                  // onFieldSubmitted: (str){
+
+                  //   node.nextFocus();
+
+                  // },
+                    onEditingComplete: (){
 
                     node.nextFocus();
 
-                  },
+                },
                   validator: (str) {
                     if (str == null) return "Country should not be null";
                     if (str.length == 0) return "Country should not be null";
